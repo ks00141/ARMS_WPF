@@ -7,12 +7,16 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MenuStyle">
+            <Setter Property="Width" Value="130"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,36 +24,7 @@
             <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <Button
-            x:Name="btn_1"
-            Content="Button1"
-            Grid.Row="1"
-            Grid.Column="0"
-            Click="btn_1_Click"/>
-        <Button
-            x:Name="btn_2"
-            Content="Button2"
-            Grid.Row="2"
-            Grid.Column="0"
-            Click="btn_2_Click"/>
-        <Button
-            x:Name="btn_3"
-            Content="Button3"
-            Grid.Row="3"
-            Grid.Column="0"
-            Click="btn_3_Click"/>
-        <Button
-            x:Name="btn_4"
-            Content="Button4"
-            Grid.Row="4"
-            Grid.Column="0"
-            Click="btn_4_Click"/>
-        <Button
-            x:Name="btn_destroy"
-            Content="X"
-            Grid.Column="3"
-            Background="White"
-            Click="btn_destroy_Click"/>
+
         <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
             <TextBlock
                 x:Name="txt_header"
@@ -68,15 +43,35 @@
                 Margin="10,0,0,0"
                 />
         </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Button
+                x:Name="btn_home"
+                Click="btn_home_Click"
+                Content="SECS/GEM STATUS"
+                Style="{StaticResource MenuStyle}"/>
+            <Button
+                x:Name="btn_PPID"
+                Style="{StaticResource MenuStyle}"
+                Content="PPID SEARCH"
+                />
+        </StackPanel>
         <TextBox 
             x:Name="tb_content"
-            Grid.RowSpan="4"
-            Grid.ColumnSpan="2"
-            Grid.Column="1"
-            Text="112345"
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3"
+            Grid.Column="0"
+            Text="Content"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="50"/>
+        <Button
+            x:Name="btn_destroy"
+            Grid.Column="2"
+            Background="White"
+            Content="X"
+            Click="btn_destroy_Click"
+            Margin="0,0,5,0"
+            />
     </Grid>
 
 </Window>

@@ -26,26 +26,6 @@ namespace ARMS_WPF
             InitializeComponent();
         }
 
-        private void btn_1_Click(object sender, RoutedEventArgs e)
-        {
-            tb_content.Text = "No1 Content";
-        }
-
-        private void btn_2_Click(object sender, RoutedEventArgs e)
-        {
-            tb_content.Text = "No2 Content";
-        }
-
-        private void btn_3_Click(object sender, RoutedEventArgs e)
-        {
-            tb_content.Text = "No3 Content";
-        }
-
-        private void btn_4_Click(object sender, RoutedEventArgs e)
-        {
-            tb_content.Text = "No4 Content";
-        }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             tb_content.Text = "Window Loaded";
@@ -69,6 +49,11 @@ namespace ARMS_WPF
         {
             txt_date.Text = DateTime.Now.ToShortDateString();
             txt_time.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
