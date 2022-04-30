@@ -1,0 +1,82 @@
+﻿<Window x:Class="ARMS_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARMS_WPF"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Button
+            x:Name="btn_1"
+            Content="Button1"
+            Grid.Row="1"
+            Grid.Column="0"
+            Click="btn_1_Click"/>
+        <Button
+            x:Name="btn_2"
+            Content="Button2"
+            Grid.Row="2"
+            Grid.Column="0"
+            Click="btn_2_Click"/>
+        <Button
+            x:Name="btn_3"
+            Content="Button3"
+            Grid.Row="3"
+            Grid.Column="0"
+            Click="btn_3_Click"/>
+        <Button
+            x:Name="btn_4"
+            Content="Button4"
+            Grid.Row="4"
+            Grid.Column="0"
+            Click="btn_4_Click"/>
+        <Button
+            x:Name="btn_destroy"
+            Content="X"
+            Grid.Column="3"
+            Background="White"
+            Click="btn_destroy_Click"/>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <TextBlock
+                x:Name="txt_header"
+                Text="ARMS Ver : 0.0.1"
+                VerticalAlignment="Center"
+                Margin="10,0,0,0"/>
+            <TextBlock
+                x:Name="txt_date"
+                Text="0000-00-00"
+                VerticalAlignment="Center"
+                Margin="20,0,0,0"/>
+            <TextBlock
+                x:Name="txt_time"
+                Text="00:00:00"
+                VerticalAlignment="Center"
+                Margin="10,0,0,0"
+                />
+        </StackPanel>
+        <TextBox 
+            x:Name="tb_content"
+            Grid.RowSpan="4"
+            Grid.ColumnSpan="2"
+            Grid.Column="1"
+            Text="112345"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="50"/>
+    </Grid>
+
+</Window>
