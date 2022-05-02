@@ -26,34 +26,15 @@ namespace ARMS_WPF
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            tb_content.Text = "Window Loaded";
-            setDateTime();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            setDateTime();
-        }
-
-        private void btn_destroy_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
         private void setDateTime()
         {
-            txt_date.Text = DateTime.Now.ToShortDateString();
-            txt_time.Text = DateTime.Now.ToLongTimeString();
+            lbl_date.Content = DateTime.Now.ToShortDateString();
+            lbl_time.Content = DateTime.Now.ToLongTimeString();
         }
 
-        private void btn_home_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            setDateTime();
         }
     }
 }

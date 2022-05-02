@@ -5,73 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARMS_WPF"
         mc:Ignorable="d"
-        WindowStyle="None"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
     <Window.Resources>
-        <Style TargetType="Button" x:Key="MenuStyle">
-            <Setter Property="Width" Value="130"/>
-            <Setter Property="Margin" Value="10,0,0,0"/>
+        <Style TargetType="Label" x:Key="DateAndTime">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
         </Style>
     </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
-            <TextBlock
-                x:Name="txt_header"
-                Text="ARMS Ver : 0.0.1"
-                VerticalAlignment="Center"
-                Margin="10,0,0,0"/>
-            <TextBlock
-                x:Name="txt_date"
-                Text="0000-00-00"
-                VerticalAlignment="Center"
-                Margin="20,0,0,0"/>
-            <TextBlock
-                x:Name="txt_time"
-                Text="00:00:00"
-                VerticalAlignment="Center"
-                Margin="10,0,0,0"
+        <StackPanel Orientation="Horizontal">
+            <Label
+                x:Name="lbl_date"
+                Content="0000-00-00"
+                Style="{StaticResource DateAndTime}"
+                />
+            <Label
+                x:Name="lbl_time"
+                Content="00:00:00"
+                Style="{StaticResource DateAndTime}"
                 />
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal">
-            <Button
-                x:Name="btn_home"
-                Click="btn_home_Click"
-                Content="SECS/GEM STATUS"
-                Style="{StaticResource MenuStyle}"/>
-            <Button
-                x:Name="btn_PPID"
-                Style="{StaticResource MenuStyle}"
-                Content="PPID SEARCH"
-                />
-        </StackPanel>
-        <TextBox 
-            x:Name="tb_content"
-            Grid.RowSpan="3"
-            Grid.ColumnSpan="3"
-            Grid.Column="0"
-            Text="Content"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="50"/>
-        <Button
-            x:Name="btn_destroy"
-            Grid.Column="2"
-            Background="White"
-            Content="X"
-            Click="btn_destroy_Click"
-            Margin="0,0,5,0"
-            />
+        <TabControl Grid.Row="1">
+            <TabItem Header="아이템1">
+            </TabItem>
+            <TabItem Header="아이템2">
+            </TabItem>
+            <TabItem Header="아이템3">
+            </TabItem>
+        </TabControl>
     </Grid>
 
 </Window>
